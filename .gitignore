@@ -1,0 +1,24 @@
+# Dependencies and build outputs
+node_modules/
+dist/
+coverage/
+src-tauri/target/
+.vite/
+
+# Local tools and generated artifacts
+.tmp/
+.superpowers/
+deliverables/
+
+# Local environment and logs
+.env
+.env.*
+!.env.example
+*.log
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
