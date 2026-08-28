@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "herbs": [
+    {
+      "id": "gancao",
+      "name": "甘草",
+      "tier": 1,
+      "culture": { "category": "传统记载", "sourceStatus": "reviewed" }
+    },
+    {
+      "id": "huangqi",
+      "name": "黄芪",
+      "tier": 1,
+      "culture": { "category": "传统记载", "sourceStatus": "reviewed" }
+    },
+    {
+      "id": "shengjiang",
+      "name": "生姜",
+      "tier": 1,
+      "culture": { "category": "传统记载", "sourceStatus": "reviewed" }
+    },
+    {
+      "id": "rougui",
+      "name": "肉桂",
+      "tier": 1,
+      "culture": { "category": "传统记载", "sourceStatus": "reviewed" }
+    },
+    {
+      "id": "danggui",
+      "name": "当归",
+      "tier": 1,
+      "culture": { "category": "传统记载", "sourceStatus": "reviewed" }
+    },
+    {
+      "id": "chuanxiong",
+      "name": "川芎",
+      "tier": 1,
+      "culture": { "category": "传统记载", "sourceStatus": "reviewed" }
+    }
+  ]
+}
