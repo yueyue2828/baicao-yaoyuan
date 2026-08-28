@@ -1554,7 +1554,7 @@ pnpm tauri build --bundles nsis
 
 Expected: every command exits with code 0 and the NSIS installer exists.
 
-- [ ] **Step 6: Commit and push the completed foundation plan**
+- [x] **Step 6: Commit and push the completed foundation plan**
 
 ```powershell
 Set-Location ..
