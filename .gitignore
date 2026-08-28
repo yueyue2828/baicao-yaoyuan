@@ -8,6 +8,7 @@ src-tauri/target/
 # Local tools and generated artifacts
 .tmp/
 .superpowers/
+.worktrees/
 deliverables/
 
 # Local environment and logs
@@ -21,4 +22,3 @@ deliverables/
 .vscode/
 .DS_Store
 Thumbs.db
-
