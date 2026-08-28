@@ -1398,7 +1398,7 @@ git commit -m "feat: add secure Windows desktop host"
 - Consumes: named routes from Task 4, display shell from Task 5, Pixi stage from Task 6, Tauri build from Task 7
 - Produces: required CI checks `unit-and-web` and `windows-installer`
 
-- [ ] **Step 1: Write failing browser acceptance tests**
+- [x] **Step 1: Write failing browser acceptance tests**
 
 Create `app/e2e/app-shell.spec.ts`:
 
@@ -1434,7 +1434,7 @@ test('primary navigation works with the keyboard', async ({ page }) => {
 })
 ```
 
-- [ ] **Step 2: Configure Playwright and verify the test catches current gaps**
+- [x] **Step 2: Configure Playwright and verify the test catches current gaps**
 
 Set `playwright.config.ts` to use Chromium and:
 
@@ -1455,7 +1455,7 @@ pnpm test:e2e
 
 Expected before fixes: at least the 1024×640 or keyboard test fails if shell overflow/focus order is wrong. Make the smallest CSS or DOM-order correction in `AppShell.vue`, then rerun until all tests pass.
 
-- [ ] **Step 3: Add Windows CI with two explicit jobs**
+- [x] **Step 3: Add Windows CI with two explicit jobs**
 
 Create `.github/workflows/verify.yml`:
 
@@ -1516,7 +1516,7 @@ jobs:
           if-no-files-found: error
 ```
 
-- [ ] **Step 4: Document exact developer commands**
+- [x] **Step 4: Document exact developer commands**
 
 Add to `README.md`:
 
@@ -1538,7 +1538,7 @@ pnpm tauri build --bundles nsis
 公开交付物只有 Windows 安装程序；浏览器启动方式仅用于开发和自动测试。
 ````
 
-- [ ] **Step 5: Run the full local verification**
+- [x] **Step 5: Run the full local verification**
 
 Run:
 
