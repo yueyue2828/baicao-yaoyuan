@@ -1,5 +1,14 @@
 :root {
   color-scheme: light;
+  --paper: #f6f0df;
+  --paper-deep: #e8dcc0;
+  --paper-line: #cbbd9f;
+  --ink: #263d36;
+  --jade: #55766b;
+  --cinnabar: #a94735;
+  --gold: #c79a43;
+  --focus: #1769aa;
+  --ui-scale: 1;
   font-family: "Microsoft YaHei UI", "Noto Sans CJK SC", sans-serif;
 }
 
@@ -11,8 +20,24 @@ html,
 body,
 #app {
   width: 100%;
-  min-height: 100%;
+  min-width: 1024px;
+  min-height: 640px;
   margin: 0;
+}
+
+body {
+  color: var(--ink);
+  background: var(--paper);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
 }
 
 .sr-only {

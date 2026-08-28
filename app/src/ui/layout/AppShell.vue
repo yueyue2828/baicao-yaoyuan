@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import { useDisplayStore } from '@/app/stores/display-store'
+
+const display = useDisplayStore()
+
 const destinations = [
   { name: 'farm', label: '药田' },
   { name: 'collection', label: '本草' },
@@ -9,7 +13,7 @@ const destinations = [
 </script>
 
 <template>
-  <div class="app-shell">
+  <div class="app-shell" :style="{ '--ui-scale': display.cssScale }">
     <header class="app-header">
       <strong>百草药园</strong>
     </header>
@@ -29,16 +33,17 @@ const destinations = [
   display: grid;
   min-height: 100dvh;
   grid-template-rows: auto minmax(0, 1fr);
-  color: #263d36;
-  background: #f6f0df;
+  color: var(--ink);
+  background: var(--paper);
+  font-size: calc(1rem * var(--ui-scale));
 }
 
 .app-header {
   padding: 0.8rem 1.5rem;
-  border-bottom: 1px solid #cbbd9f;
-  background: #e8dcc0;
-  color: #263d36;
-  font-size: 1.25rem;
+  border-bottom: 1px solid var(--paper-line);
+  background: var(--paper-deep);
+  color: var(--ink);
+  font-size: 1.25em;
   letter-spacing: 0.12em;
 }
 
@@ -55,7 +60,7 @@ const destinations = [
   grid-template-columns: repeat(5, minmax(7rem, 1fr));
   gap: 0.75rem;
   padding: 0.75rem clamp(1rem, 4vw, 4rem);
-  border-top: 1px solid #cbbd9f;
+  border-top: 1px solid var(--paper-line);
   background: rgb(246 240 223 / 96%);
 }
 
@@ -63,7 +68,7 @@ const destinations = [
   padding: 0.7rem 1rem;
   border: 1px solid #b8aa8e;
   border-radius: 0.35rem;
-  color: #263d36;
+  color: var(--ink);
   background: #efe4ca;
   font-size: 1rem;
   font-weight: 700;
@@ -73,9 +78,9 @@ const destinations = [
 
 .primary-nav a:hover,
 .primary-nav a.router-link-active {
-  border-color: #55766b;
+  border-color: var(--jade);
   color: #fffaf0;
-  background: #55766b;
+  background: var(--jade);
 }
 
 .screen-content {
