@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { useDisplayStore } from '@/app/stores/display-store'
+import { useAppStore } from '@/app/stores/app-store'
 
 const display = useDisplayStore()
+const app = useAppStore()
 
 function updateUiScale(event: Event): void {
   display.setUiScale(Number((event.target as HTMLInputElement).value))
@@ -37,6 +39,26 @@ function updateUiScale(event: Event): void {
         保持像素锐利
       </label>
     </fieldset>
+
+    <section class="version-information" aria-labelledby="version-title">
+      <h3 id="version-title">版本信息</h3>
+      <dl v-if="app.appInfo">
+        <div>
+          <dt>应用</dt>
+          <dd>{{ app.appInfo.name }}</dd>
+        </div>
+        <div>
+          <dt>版本</dt>
+          <dd>{{ app.appInfo.version }}</dd>
+        </div>
+        <div>
+          <dt>运行环境</dt>
+          <dd>{{ app.appInfo.runtime === 'browser' ? '开发预览' : 'Windows 桌面版' }}</dd>
+        </div>
+      </dl>
+      <p v-else>正在读取版本信息……</p>
+      <p>本版本完全离线运行。</p>
+    </section>
   </section>
 </template>
 
@@ -72,5 +94,31 @@ function updateUiScale(event: Event): void {
   width: 1.1rem;
   height: 1.1rem;
   accent-color: var(--jade);
+}
+
+.version-information {
+  width: min(34rem, 100%);
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--paper-line);
+}
+
+.version-information dl {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.version-information dl div {
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+}
+
+.version-information dt {
+  color: var(--jade);
+  font-weight: 700;
+}
+
+.version-information dd {
+  margin: 0;
 }
 </style>

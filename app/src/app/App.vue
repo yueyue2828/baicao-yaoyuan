@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
+import { useAppStore } from '@/app/stores/app-store'
 import { bootstrapApplication, type BootState } from '@/application/bootstrap'
 
 const boot = ref<BootState>({ status: 'loading' })
+const app = useAppStore()
 
 onMounted(async () => {
   boot.value = await bootstrapApplication()
+  if (boot.value.status === 'ready') await app.loadAppInfo()
 })
 </script>
 
