@@ -4,6 +4,11 @@ dist/
 coverage/
 src-tauri/target/
 .vite/
+app/node_modules/
+app/dist/
+app/test-results/
+app/playwright-report/
+app/src-tauri/target/
 
 # Local tools and generated artifacts
 .tmp/
